@@ -1,0 +1,36 @@
+.waste-collection-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.waste-collection-container h2 {
+  color: #333;
+}
+
+.location-list {
+  list-style: none;
+  padding: 0;
+}
+
+.location-list li {
+  margin: 10px 0;
+}
+
+.location-list a {
+  text-decoration: none;
+  color: #0066cc;
+}
+
+.location-list a:hover {
+  text-decoration: underline;
+}
+
+.last-updated {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}

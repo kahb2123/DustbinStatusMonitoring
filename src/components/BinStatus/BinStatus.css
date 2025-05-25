@@ -1,0 +1,225 @@
+.bin-status-container {
+  padding: 60px;
+  margin-bottom: 100px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tank-row {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.tank-container {
+  width: 350px;
+}
+
+.tank-label {
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.tank-visualization {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.tank-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.tank-outline {
+  fill: none;
+  stroke: #ddd;
+  stroke-width: 3;
+}
+
+.no-transition {
+  transition: none !important;
+}
+
+.bubble {
+  animation: bubble-rise 3s infinite ease-in;
+  opacity: 0;
+}
+
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+}
+
+.fluid-surface {
+  filter: url(#fluid-turbulence);
+}
+
+.tank-marker {
+  opacity: 0.6;
+}
+
+.tank-marker::after {
+  content: attr(data-value);
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.6rem;
+  color: #666;
+}
+
+.tank-center-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2) inset;
+}
+
+.tank-level {
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.tank-status {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 3px;
+}
+
+/* Tank type specific styles */
+.tank-container.dry .tank-outline {
+  stroke: #a5d6a7;
+}
+
+.tank-container.wet .tank-outline {
+  stroke: #90caf9;
+}
+
+/* Add these styles to your existing CSS */
+
+.tank-container {
+  position: relative;
+}
+
+.tank-details-panel {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 10;
+  padding: 15px;
+  animation: panelFadeIn 0.3s ease-out;
+}
+
+@keyframes panelFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.panel-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  line-height: 1;
+  padding: 0 5px;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+.panel-content {
+  font-size: 0.9rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.detail-label {
+  color: #666;
+  font-weight: bold;
+}
+
+.progress-container {
+  height: 10px;
+  background: #f0f0f0;
+  border-radius: 5px;
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+/* Make sure the tank visualization has pointer events when details are shown */
+.tank-visualization {
+  pointer-events: auto;
+}
+
+/* Add this to ensure the details panel doesn't affect the layout */
+.tank-row {
+  position: relative;
+  min-height: 250px; /* Ensure space for the details panel */
+}
+
+/* Rest of your existing CSS remains the same */
