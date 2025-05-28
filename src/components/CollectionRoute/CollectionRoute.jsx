@@ -7,15 +7,15 @@ import './CollectionRoute.css';
 
 // Sample bin locations with fill levels
 const initialBins = [
-  { id: 1, name: "Kble 16", lat: 11.5621, lng: 37.3925, level: 45 },
-  { id: 2, name: "FleghiowtHospital", lat: 11.5635, lng: 37.3982, level: 80 },
-  { id: 3, name: "Papires", lat: 11.5678, lng: 37.3950, level: 30 },
-  { id: 4, name: "PedaCampus", lat: 11.5605, lng: 37.4001, level: 65 },
-  { id: 5, name: "ቅዱስ ጊዮርጊስ ቤ/ክ", lat: 11.5652, lng: 37.3876, level: 20 },
+  { id: 1, name: "ቅዱስ ጊዮርጊስ ቤ/ክ", lat: 11.59543, lng: 37.38901, level: 45 },
+  { id: 2, name: "Bahir Dar city administration council", lat: 11.59655, lng: 37.39311, level: 80 },
+  { id: 3, name: "Sky Resort ", lat: 11.59611, lng: 37.38698, level: 30 },
+  { id: 4, name: "Meskel Adebabay", lat: 11.59122, lng: 37.38391, level: 65 },
+  { id: 5, name: "Papires", lat: 11.58740, lng: 37.38902, level: 20 },
 ];
 
-// Depot location
-const depot = { lat: 11.5630, lng: 37.3900, name: "Poly" };
+// Depot locationcd
+const depot = { lat: 11.59792, lng: 37.39548, name: "Poly" };
 
 const CollectionRoute = () => {
   const [bins, setBins] = useState(initialBins);

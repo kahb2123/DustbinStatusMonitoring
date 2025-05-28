@@ -3,6 +3,10 @@ import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './Home.css';
 
+import BD1 from './images/BD1.jpg';
+import BD2 from './images/BD2.jpg';
+import BD3 from './images/BD3.jpg';
+import BD4 from './images/BD4.jpg';
 const Home = () => {
   return (
     <div className="home-container">
@@ -14,19 +18,26 @@ const Home = () => {
           showThumbs={false}
           showStatus={false}
         >
+          
+           <div>
+            <img src={BD4} alt="Smart Waste Management" />
+            
+          </div>
           <div>
-            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945" alt="Smart Waste Management" />
+            <img src={BD3} alt="Smart Waste Management" />
+            
+          </div>
+          <div>
+            <img src={BD2} alt="Smart Waste Management" />
+            
+          </div>
+          <div>
+            <img src={BD1} alt="Smart Waste Management" />
             
           </div>
            
-          <div>
-            <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115" alt="Clean City" />
-            
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1503596476-1c12a8ba09a9" alt="IoT Technology" />
-         
-          </div>
+          
+          
         </Carousel>
       </div>
 
